@@ -8,8 +8,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+ Button button;
+ EditText editText;
+ TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +23,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-   System.out.print("mdg 405");
+
+
+
+
+
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,6 +37,18 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        button=(Button)findViewById(R.id.button);
+        editText=(EditText) findViewById(R.id.editText);
+        textView=(TextView) findViewById(R.id.textView);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+               textView.setText(editText.getText());
+            }
+        });
+
     }
 
     @Override
